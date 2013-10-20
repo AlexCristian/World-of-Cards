@@ -1,0 +1,273 @@
+﻿<phone:PhoneApplicationPage
+    ApplicationBar = "{StaticResource GlobalAppBar}"
+    x:Class="World_of_Cards.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+            <!-- BEGIN MASK ANIMATIONS -->
+            <Storyboard x:Name="MasksStoryboard">
+                <DoubleAnimation
+            Storyboard.TargetName="TopMask"
+            Storyboard.TargetProperty="Opacity"
+            From="0.0" To="1.0" Duration="0:0:0.3"
+            AutoReverse="False"/>
+                <DoubleAnimation
+            Storyboard.TargetName="BottomMask"
+            Storyboard.TargetProperty="Opacity"
+            From="0.0" To="1.0" Duration="0:0:0.3"
+            AutoReverse="False"/>
+                <DoubleAnimation
+            Storyboard.TargetName="BackButtonRotation"
+            Storyboard.TargetProperty="RotationY"
+            From="-90" To="0" Duration="0:0:0.3"
+            AutoReverse="False"/>
+                <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="BackButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                </ObjectAnimationUsingKeyFrames>
+                <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="BottomMask" Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                </ObjectAnimationUsingKeyFrames>
+                <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="TopMask" Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+            <!-- MASK REVERSE -->
+            <Storyboard x:Name="MasksStoryboard_Reverse">
+                <DoubleAnimation
+            Storyboard.TargetName="TopMask"
+            Storyboard.TargetProperty="Opacity"
+            From="1.0" To="0.0" Duration="0:0:0.3"
+            AutoReverse="False"/>
+                <DoubleAnimation
+            Storyboard.TargetName="BottomMask"
+            Storyboard.TargetProperty="Opacity"
+            From="1.0" To="0.0" Duration="0:0:0.3"
+            AutoReverse="False"/>
+                <DoubleAnimation
+            Storyboard.TargetName="BackButtonRotation"
+            Storyboard.TargetProperty="RotationY"
+            From="0" To="-90" Duration="0:0:0.3"
+            AutoReverse="False"/>
+                <ObjectAnimationUsingKeyFrames BeginTime="00:00:0.3" Storyboard.TargetName="BackButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:0.3" Value="Collapsed"/>
+                </ObjectAnimationUsingKeyFrames>
+                <ObjectAnimationUsingKeyFrames BeginTime="00:00:0.3" Storyboard.TargetName="TopMask" Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:0.3" Value="Collapsed"/>
+                </ObjectAnimationUsingKeyFrames>
+                <ObjectAnimationUsingKeyFrames BeginTime="00:00:0.3" Storyboard.TargetName="BottomMask" Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:0.3" Value="Collapsed"/>
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+
+            <!-- BEGIN HOSTGAME MODAL ANIMATIONS -->
+            <Storyboard x:Name="HostGameModalAnimation">
+                <DoubleAnimation
+            Storyboard.TargetName="HostGameModalTransform"
+            Storyboard.TargetProperty="TranslateY"
+            From="400" To="0" Duration="0:0:0.3"
+            AutoReverse="False"/>
+                <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="HostGameModal" Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+
+            <!--BEGIN HOSTGAME MODAL ANIMATION REVERSE-->
+            <Storyboard x:Name="HostGameModalAnimation_Reverse">
+                <DoubleAnimation
+            Storyboard.TargetName="HostGameModalTransform"
+            Storyboard.TargetProperty="TranslateY"
+            From="0" To="400" Duration="0:0:0.3"
+            AutoReverse="False"/>
+                <ObjectAnimationUsingKeyFrames BeginTime="00:00:0.3" Storyboard.TargetName="HostGameModal" Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:0.3" Value="Collapsed"/>
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+
+            <!--BEGIN JOINGAME MODAL ANIMATION -->
+            <Storyboard x:Name="JoinGameModalAnimation">
+                <DoubleAnimation
+            Storyboard.TargetName="JoinGameModalTransform"
+            Storyboard.TargetProperty="TranslateY"
+            From="400" To="0" Duration="0:0:0.3"
+            AutoReverse="False"/>
+                <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="JoinGameModal" Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="Visible"/>
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+
+            <!--BEGIN JOINGAME ANIMATION REVERSE-->
+            <Storyboard x:Name="JoinGameModalAnimation_Reverse">
+                <DoubleAnimation
+            Storyboard.TargetName="JoinGameModalTransform"
+            Storyboard.TargetProperty="TranslateY"
+            From="0" To="400" Duration="0:0:0.3"
+            AutoReverse="False"/>
+                <ObjectAnimationUsingKeyFrames BeginTime="00:00:0.3" Storyboard.TargetName="JoinGameModal" Storyboard.TargetProperty="(UIElement.Visibility)">
+                    <DiscreteObjectKeyFrame KeyTime="00:00:0.3" Value="Collapsed"/>
+                </ObjectAnimationUsingKeyFrames>
+            </Storyboard>
+            <DataTemplate x:Name="hostTemplate">
+                <Grid Margin ="10,0,10,0" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
+                    <Border BorderBrush="DarkGray" BorderThickness="1.5" Height="100" Width="400">
+                        <Grid Margin ="5, 5, 5, 5" HorizontalAlignment="Center" Height="100" Width="400" VerticalAlignment="Top" Background="#FFE6E6E6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="150" />
+                            </Grid.ColumnDefinitions>
+                            <Image Stretch ="UniformToFill" Source="{Binding PlayerImage}" Width="100" HorizontalAlignment="Left"/>
+                            <TextBlock Grid.Column="1" Foreground="Black" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Padding="0,0,0,20" Text="{Binding PlayerName}"/>
+                            <Grid Grid.Column="2" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="35"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" HorizontalAlignment="Left" Height="100" Margin="0,0,0,-20" VerticalAlignment="Top" Width="150">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="80"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Foreground="Black" FontSize="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,40" Text=""/>
+                                    <TextBlock Grid.Column="1" Foreground="Black" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0"></TextBlock>
+                                </Grid>
+                                <TextBlock Grid.Row="1" Foreground="#FF666666" FontSize="40" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,0"></TextBlock>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Name="joinTemplate">
+                <Grid DataContext="{Binding}" Tap="gameSelect_Click" Margin ="10,0,10,0" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
+                    <Border BorderBrush="DarkGray" BorderThickness="1.5" Height="100" Width="400">
+                        <Grid Margin ="5, 5, 5, 5" HorizontalAlignment="Center" Height="100" Width="400" VerticalAlignment="Top" Background="#FFE6E6E6">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="150" />
+                            </Grid.ColumnDefinitions>
+                            <Image Stretch ="UniformToFill" Source="{Binding PlayerImage}" Width="100" HorizontalAlignment="Left"/>
+                            <TextBlock Grid.Column="1" Foreground="Black" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" Padding="0,0,0,20" Text="{Binding PlayerName}"/>
+                            <Grid Grid.Column="2" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="150">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="35"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" HorizontalAlignment="Left" Height="100" Margin="0,0,0,-20" VerticalAlignment="Top" Width="150">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70"/>
+                                        <ColumnDefinition Width="80"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Foreground="Black" FontSize="80" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,40" Text="{Binding GameSize}"/>
+                                    <TextBlock Grid.Column="1" Foreground="Black" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0">players</TextBlock>
+                                </Grid>
+                                <TextBlock Grid.Row="1" Foreground="#FF666666" FontSize="40" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,0">macao</TextBlock>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </DataTemplate>
+
+        </Grid.Resources>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/MenuImgs/background-table.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="155"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Width="Auto" Margin="12,17,0,28">
+            <TextBlock Text="World of Cards" Height="80" HorizontalAlignment="Center" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="LoginName" Text="Hi, Guest!" HorizontalAlignment="Right" Margin="0,0,30,0"></TextBlock>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <StackPanel x:Name="ContentPanel" Height="300" Grid.Row="1" Margin="12,0,12,0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.ZIndex="2">
+            <Image Source="/Assets/MenuImgs/host-game-button.png" RenderTransformOrigin="0.5,0.5" Tap="HostGame_Click" Margin="0,0,30,0">
+                <Image.Projection>
+                    <PlaneProjection LocalOffsetX="80" LocalOffsetY="40"/>
+                </Image.Projection>
+                <Image.RenderTransform>
+                    <CompositeTransform Rotation="-15"/>
+                </Image.RenderTransform>
+            </Image>
+            <Image Source="/Assets/MenuImgs/join-game-button.png" Tap="JoinGame_Click"/>
+            <Image x:Name ="SP" Source="/Assets/MenuImgs/single-player-button.png" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Margin="30,0,0,0">
+                <Image.Projection>
+                    <PlaneProjection LocalOffsetX="-80" LocalOffsetY="40"/>
+                </Image.Projection>
+                <Image.RenderTransform>
+                    <CompositeTransform Rotation="15"/>
+                </Image.RenderTransform>
+            </Image>
+        </StackPanel>
+
+        <Rectangle x:Name="TopMask" Fill="#B2000000" Grid.Row="0" HorizontalAlignment="Left" Height="159" VerticalAlignment="Top" Width="1000" Canvas.ZIndex="9" Margin="0,-4,-272,0" Visibility="Collapsed"/>
+
+        <Rectangle x:Name="BottomMask" Fill="#B2000000" Grid.Row="1" HorizontalAlignment="Left" Height="1000" VerticalAlignment="Top" Width="1000" Canvas.ZIndex="9" Margin="0,0,0,0" Visibility="Collapsed"/>
+        <Image x:Name="BackButton" Canvas.ZIndex="10" Tap="BackButton_Click" Source="Assets/MenuImgs/back-icon.png" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="80" Visibility="Collapsed">
+            <Image.Projection>
+                <PlaneProjection x:Name="BackButtonRotation" RotationY="0"/>
+            </Image.Projection>
+        </Image>
+        <StackPanel x:Name="HostGameModal" HorizontalAlignment="Center" Grid.Row="1" Height="340" VerticalAlignment="Bottom" Width="500" Canvas.ZIndex="10" Margin="0" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+            <StackPanel.RenderTransform>
+                <CompositeTransform x:Name="HostGameModalTransform"  TranslateY="0"/>
+            </StackPanel.RenderTransform>
+            <TextBlock TextWrapping="Wrap" Foreground="White" FontSize="40" Margin="0">
+                host game
+            </TextBlock>
+            <StackPanel Height="300" Background="White">
+                <TextBlock x:Name="Looking1" Height="32" Foreground="Black" Margin="113,10" HorizontalAlignment="Center">
+            		<Run Text="Waiting for players"/>
+                </TextBlock>
+                <ProgressBar x:Name="Waiting" IsIndeterminate="True" Foreground="#FFE51400" Height="10" RenderTransformOrigin="0.5,0.5" />
+
+                <StackPanel x:Name="Games">
+                    <ScrollViewer>
+                        <ItemsControl x:Name="hostBinding" ItemsSource="{Binding}" 
+                            ItemTemplate="{StaticResource hostTemplate}"/>
+                    </ScrollViewer>
+                    <Button Tap="StartTapped">
+                        <TextBlock Foreground="Gray">Start</TextBlock>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel x:Name="JoinGameModal" HorizontalAlignment="Center" Grid.Row="1" Height="340" VerticalAlignment="Bottom" Width="500" Canvas.ZIndex="10" Margin="0" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+            <StackPanel.RenderTransform>
+                <CompositeTransform x:Name="JoinGameModalTransform"  TranslateY="0"/>
+            </StackPanel.RenderTransform>
+            <TextBlock TextWrapping="Wrap" Foreground="White" FontSize="40" Margin="0">
+                join game
+            </TextBlock>
+            <StackPanel Height="300" Background="White">
+                <TextBlock x:Name="Looking" Height="32" Foreground="Black" Margin="113,10" HorizontalAlignment="Center">
+            		<Run x:Name="JoinLoadingText" Text="Looking for games in your area"/>
+                </TextBlock>
+                <ProgressBar x:Name="Waiting1" IsIndeterminate="True" Foreground="#FFE51400" Height="10" RenderTransformOrigin="0.5,0.5" />
+                <StackPanel x:Name="Games1">
+                    <ScrollViewer>
+                        <ItemsControl Tap="gameSelect_Click"  x:Name="joinBinding" ItemsSource="{Binding}" 
+                            ItemTemplate="{StaticResource joinTemplate}"/>
+                    </ScrollViewer>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</phone:PhoneApplicationPage>

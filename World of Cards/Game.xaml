@@ -1,0 +1,90 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="World_of_Cards.Game"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.Resources>
+
+            <!--Player 1 Data Template-->
+            <DataTemplate x:Name="Player1Template">
+                <StackPanel x:Name="Player1" Height="100" Width="100" Margin="564,370,64,10" Orientation="Horizontal">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding PlayerName}"/>
+                    <Border BorderBrush="Gray" BorderThickness="2" Height="50" Width="50">
+                        <Image Source="{Binding PlayerImage}" Stretch="UniformToFill" Height="50" Width="50" />
+                    </Border>
+                </StackPanel>
+            </DataTemplate>
+
+            <!--Player 2 Data Template-->
+            <DataTemplate x:Name="Player2Template">
+                <StackPanel x:Name="Player2" Orientation="Horizontal" Width="150" Height="100" Margin="289,10,289,370" >
+                    <Image x:Name="P2_Cards" Height="84.03" Source="/Assets/Deck/52.png" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <CompositeTransform Rotation="+180"/>
+                        </Image.RenderTransform>
+                    </Image>
+                    <StackPanel x:Name="P2_Info" Height="50" Width="100" Margin="0,10,0,0" Orientation="Horizontal" >
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding PlayerName}"/>
+                        <Border BorderBrush="Gray" Height="50" Width="50"  BorderThickness="2">
+                            <Image Source="{Binding PlayerImage}" Stretch="UniformtoFill" Height="50" Width="50" />
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+            </DataTemplate>
+        </Grid.Resources>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/MenuImgs/background-table.jpg" />
+        </Grid.Background>
+        
+        <!--Player 1-->
+        <ItemsControl x:Name="icPlayer1" ItemsSource="{Binding}" 
+                            ItemTemplate="{StaticResource Player1Template}" Margin="0,10,0,-10"/>
+
+        <!--Player 2-->
+        <ItemsControl x:Name="icPlayer2" ItemsSource="{Binding}" 
+                            ItemTemplate="{StaticResource Player2Template}" Margin="0,10,0,-10"/>
+
+        <StackPanel Margin="506,31,22,299" Width="200" Height="150">
+            <TextBlock x:Name="CurrentPlayer" Height="60" Width="200" FontSize="35" >
+        		<Run Text="Rotea's turn"/>
+            </TextBlock>
+            <TextBlock x:Name="TIMER" FontSize="40" Height="73" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Image x:Name="Center" Stretch="Uniform" Source="/Assets/Deck/5rosie.png" Margin="319,164,319,186" Width="90" Height="130"/>
+       
+        <Canvas  HorizontalAlignment="Center" Width="400" Height="130" Margin="159,310,169,0" >
+            <Image Source="/Assets/Deck/4.png" Stretch="Uniform" Height="130" Width="90"/>
+            <Image Canvas.Left="45" Source="/Assets/Deck/2.png" Stretch="Uniform" Height="130" Width="90"/>
+            <Image Canvas.Left="90" Source="/Assets/Deck/34.png" Stretch="Uniform" Height="130" Width="90"/>
+            <Image Canvas.Left="135" Source="/Assets/Deck/47.png" Stretch="Uniform" Height="130" Width="90"/>
+            <Image Canvas.Left="180" Source="/Assets/Deck/29.png" Stretch="Uniform" Height="130" Width="90"/>
+        </Canvas>
+            
+        
+        <Image x:Name="Pick"  Source="/Assets/Deck/52.png" RenderTransformOrigin="-0.985,-2.636" Margin="-156.542,6.257,798.333,338.967" UseLayoutRounding="False" d:LayoutRounding="Auto">
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="+90" TranslateX="746.064" TranslateY="258.387"/>
+            </Image.RenderTransform>
+        </Image>
+
+        <Button x:Name="Move" Height="100" Width="150" Margin="0,360,578,20" Background="#FF5D5D5D" Foreground="White" Opacity="100">
+            <TextBlock x:Name="Move2" FontSize="40" Foreground="White">
+                <Run Text="Move" />
+            </TextBlock>
+        </Button>
+    </Grid>
+</phone:PhoneApplicationPage>

@@ -1,0 +1,80 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="World_of_Cards.Page1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Landscape" Orientation="Landscape"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/MenuImgs/background-table.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Image x:Name="BackButton" Tap="BackButton_Click" Source="Assets/MenuImgs/back-icon.png" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="80" Margin="-2,0,0,0" />
+            <TextBlock Text="Rules" FontSize="60"/>
+        </StackPanel>
+        
+        <!--ContentPanel - place additional content here-->
+        <Grid Margin="0,40,0,0">
+            <phone:Pivot HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" Padding="0">
+                <phone:PivotItem CacheMode="{x:Null}" Header="macao" Margin="20,0,12,0">
+                    <Grid x:Name="ContentPanel" Grid.Row="1">
+                        <ScrollViewer Height="320" Width="760"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Top" 
+                        VerticalScrollBarVisibility="Visible">
+                            <TextBlock Width="760" Height="Auto" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                The game is played with all the cards except the black and red Jokers. Macao is an individual game and can not be played in teams. The minimum number of players is 2 and the maximum one is 6. The goal of the game is to get rid of all your cards first.<LineBreak/>
+                                When the game is played by two or three players, the game stops when there is only one player left with cards.<LineBreak/>
+                                When the game is played by five or six players, the game stops when the third player finishes the game.<LineBreak/>
+                                After the cards are shuffled, every player gets five of them. Then the next card is turned face up (this card should not have any special function), and the rest of the cards form the pile (faced downwards).<LineBreak/>
+                                The player who starts must add a card with the same symbol (e.g. hearts on top of hearts, clubs on clubs) or the same number on top of the last card facing upwards. If a player has more cards of the same number/symbol he can add all of them.<LineBreak/>
+                                If a player can not or does not want to add another card on top of the pile he can pick one from the pile. If there are no more cards in the pile, the last card facing upwards (last card added) is placed on the table and the remaining cards are shuffled to form the new pile.<LineBreak/>
+                                The special cards are: 2, 3, 4, A:<LineBreak/><LineBreak/>
+	                      2 (3): The next player must pick 2 (3) cards from the pile (unless he adds another 2 or 3 and the next player must pick 2 or 3 cards)<LineBreak/>
+	                      4: The next player looses his/hers turn (unless he adds another 4 and the next player looses the turn)<LineBreak/>
+	                      A: Can be placed on top of any card, and can change the pile's number/symbol.
+
+                            </TextBlock>
+                        </ScrollViewer>
+                    </Grid>
+                </phone:PivotItem>
+                <phone:PivotItem CacheMode="{x:Null}" Header="solitaire">
+                    <Grid>
+                        <ScrollViewer Height="320" Width="720">
+                            <TextBlock Width="720" Height="Auto" TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            Taking a shuffled standard 52-card deck of playing cards (without Jokers), one <LineBreak/>upturned card is dealt on the left of the playing area, then six downturned cards <LineBreak/>(from left to right). On top of the downturned cards, an upturned card is dealt on<LineBreak/> the left-most downturned pile, and downturned cards on the rest until all piles have an upturned card.
+
+    The four foundations (light rectangles in the upper right of the figure) are built up by suit from Ace (low in this game) to King, <LineBreak/>and the tableau piles can be built down by alternate colors, and partial or complete piles can be moved if they are built down by alternate colors also. Any empty piles can be filled with a King or a pile of cards with a King. The aim of the game is to build up a stack of cards starting with 2 and ending with King, all of the same suit. Once this is accomplished, the goal is to move this to a foundation, where the player has previously placed the Ace of that suit. Once the player has done this, they will have "finished" that suit, the goal being, of course, to finish all suits, at which time the player would have won. There are different ways of dealing the remainder of the deck:
+
+    Turning three cards at once to the waste, either allowing three passes through the deck or placing no limit on passes through the deck.
+    Turning three cards at once, reversing the order of each group of three as the cards are dealt.
+    Turning only one card at a time, but only passing through the deck once.
+    Turning only one card at a time, but placing no limit on passes through the deck.
+    Turning three cards at once to the waste with no limit on passes through the deck, but allowing the player to switch once to a single pass through the deck one card at a time; after that single pass, however, the player cannot go back to turning three cards at a time and can turn over no more cards from the waste.
+
+                            </TextBlock>
+                        </ScrollViewer>
+                    </Grid>
+                </phone:PivotItem>
+            </phone:Pivot>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

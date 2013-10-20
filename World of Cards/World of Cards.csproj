@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A906C8D-4BE6-466F-BF88-512D4896D37B}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>World_of_Cards</RootNamespace>
+    <AssemblyName>World of Cards</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>World_of_Cards_$(Configuration)_$(Platform).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>World_of_Cards.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Container\JoinContainer.cs" />
+    <Compile Include="Container\HostContainer.cs" />
+    <Compile Include="DeckImage.cs" />
+    <Compile Include="Game.xaml.cs">
+      <DependentUpon>Game.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HostGame.xaml.cs">
+      <DependentUpon>HostGame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JoinGame.xaml.cs">
+      <DependentUpon>JoinGame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HelpPage.xaml.cs">
+      <DependentUpon>HelpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\AppResources.Designer.cs" />
+    <Compile Include="Resources\DiscoveryBeacon.cs" />
+    <Compile Include="Resources\GameFinder.cs" />
+    <Compile Include="Resources\GameManager.cs" />
+    <Compile Include="Resources\ImageConverter.cs" />
+    <Compile Include="Resources\LiveAPIController.cs" />
+    <Compile Include="Resources\MyConverter.cs" />
+    <Compile Include="Resources\PersistentStorage.cs" />
+    <Compile Include="Resources\PlayerContainer.cs" />
+    <Compile Include="Resources\Shuffle.cs" />
+    <Compile Include="Resources\SocketManager.cs" />
+    <Compile Include="Solitaire.xaml.cs">
+      <DependentUpon>Solitaire.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Game.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HostGame.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="JoinGame.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HelpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Solitaire.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="World_of_Cards_2013_07_25_13_15_54.sap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\2.png" />
+    <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Deck\0.png" />
+    <Content Include="Assets\Deck\1.png" />
+    <Content Include="Assets\Deck\10.png" />
+    <Content Include="Assets\Deck\11.png" />
+    <Content Include="Assets\Deck\12.png" />
+    <Content Include="Assets\Deck\13.png" />
+    <Content Include="Assets\Deck\14.png" />
+    <Content Include="Assets\Deck\15.png" />
+    <Content Include="Assets\Deck\16.png" />
+    <Content Include="Assets\Deck\17.png" />
+    <Content Include="Assets\Deck\18.png" />
+    <Content Include="Assets\Deck\19.png" />
+    <Content Include="Assets\Deck\2.png" />
+    <Content Include="Assets\Deck\20.png" />
+    <Content Include="Assets\Deck\21.png" />
+    <Content Include="Assets\Deck\22.png" />
+    <Content Include="Assets\Deck\23.png" />
+    <Content Include="Assets\Deck\24.png" />
+    <Content Include="Assets\Deck\25.png" />
+    <Content Include="Assets\Deck\26.png" />
+    <Content Include="Assets\Deck\27.png" />
+    <Content Include="Assets\Deck\28.png" />
+    <Content Include="Assets\Deck\29.png" />
+    <Content Include="Assets\Deck\3.png" />
+    <Content Include="Assets\Deck\30.png" />
+    <Content Include="Assets\Deck\31.png" />
+    <Content Include="Assets\Deck\32.png" />
+    <Content Include="Assets\Deck\33.png" />
+    <Content Include="Assets\Deck\34.png" />
+    <Content Include="Assets\Deck\35.png" />
+    <Content Include="Assets\Deck\36.png" />
+    <Content Include="Assets\Deck\37.png" />
+    <Content Include="Assets\Deck\38.png" />
+    <Content Include="Assets\Deck\39.png" />
+    <Content Include="Assets\Deck\4.png" />
+    <Content Include="Assets\Deck\40.png" />
+    <Content Include="Assets\Deck\41.png" />
+    <Content Include="Assets\Deck\42.png" />
+    <Content Include="Assets\Deck\43.png" />
+    <Content Include="Assets\Deck\44.png" />
+    <Content Include="Assets\Deck\45.png" />
+    <Content Include="Assets\Deck\46.png" />
+    <Content Include="Assets\Deck\47.png" />
+    <Content Include="Assets\Deck\48.png" />
+    <Content Include="Assets\Deck\49.png" />
+    <Content Include="Assets\Deck\5.png" />
+    <Content Include="Assets\Deck\50.png" />
+    <Content Include="Assets\Deck\51.png" />
+    <Content Include="Assets\Deck\52.png" />
+    <Content Include="Assets\Deck\53.png" />
+    <Content Include="Assets\Deck\6.png" />
+    <Content Include="Assets\Deck\7.png" />
+    <Content Include="Assets\Deck\8.png" />
+    <Content Include="Assets\Deck\9.png" />
+    <Content Include="Assets\MenuImgs\back-icon.png" />
+    <Content Include="Assets\MenuImgs\Background2.png" />
+    <Content Include="Assets\MenuImgs\feature.settings.png" />
+    <Content Include="Assets\MenuImgs\host-game-button.png" />
+    <Content Include="Assets\MenuImgs\host-game.png" />
+    <Content Include="Assets\MenuImgs\join-game-button.png" />
+    <Content Include="Assets\MenuImgs\join-game.png" />
+    <Content Include="Assets\MenuImgs\login.png" />
+    <Content Include="Assets\MenuImgs\Mapa.png" />
+    <Content Include="Assets\MenuImgs\questionmark.png" />
+    <Content Include="Assets\MenuImgs\single-player-button.png" />
+    <Content Include="Assets\MenuImgs\single-player.png" />
+    <Content Include="Assets\MenuImgs\worldofcards.png" />
+    <Content Include="Assets\Rotea.png" />
+    <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileMedium.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileMediumLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\MenuImgs\background-table.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Live, Version=5.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Live.Controls, Version=5.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

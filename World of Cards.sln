@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "World of Cards", "World of Cards\World of Cards.csproj", "{0A906C8D-4BE6-466F-BF88-512D4896D37B}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://alexcristian.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = World\u0020of\u0020Cards\\World\u0020of\u0020Cards.csproj
+		SccProjectName1 = World\u0020of\u0020Cards
+		SccLocalPath1 = World\u0020of\u0020Cards
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Debug|ARM.ActiveCfg = Debug|ARM
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Debug|ARM.Build.0 = Debug|ARM
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Debug|ARM.Deploy.0 = Debug|ARM
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Debug|x86.ActiveCfg = Debug|x86
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Debug|x86.Build.0 = Debug|x86
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Debug|x86.Deploy.0 = Debug|x86
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Release|ARM.ActiveCfg = Release|ARM
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Release|ARM.Build.0 = Release|ARM
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Release|ARM.Deploy.0 = Release|ARM
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Release|x86.ActiveCfg = Release|x86
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Release|x86.Build.0 = Release|x86
+		{0A906C8D-4BE6-466F-BF88-512D4896D37B}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
