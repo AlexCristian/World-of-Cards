@@ -1,7 +1,7 @@
 World of Cards
 ==============
 
-Windows Phone 8 multiplayer cards game, currently supports Macao and Solitaire.
+Windows Phone 8 multiplayer cards game, supports Macao and Solitaire.
 
 Created during the Microsoft 2013 Summer Camp by Alex Cristian, Ion Claudiu and Maria Pandele.
 
